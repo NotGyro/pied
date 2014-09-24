@@ -23,8 +23,9 @@ group ::= '(' list ')' .
 list ::= term (',' term)* .
 
 //An expression is anything that can be simplified to a value or one action, and
-//a term is anything that can be used in an expression - so *a block of code can
-//be a term since it is a first-class citizen in this language*.
+a term is anything that can be used in an expression - so *a block of code can
+be a term since it is a first-class citizen in this language*.
+
 term ::= declaration | identifier | call | literal | block | expression | group .
 
 declaration ::= identifier identifier (',' identifier)*
