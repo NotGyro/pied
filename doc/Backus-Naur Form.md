@@ -2,8 +2,8 @@ Pied syntax
 ====
 Described in Extended Backus-Naur Form, as understood by an amateur.
 
-This is not here for rigour but more as a part of the planning documentation
-- a more formal way to keep track of what the hell I was trying to do.
+This is not here for rigour but more as a part of the planning documentation -
+a more formal way to keep track of what the hell I was trying to do.
 
 I have no idea how to describe "any arbitrary unicode character that
 is not already a symbol" in EBNF. Help me Github, you're my only hope.
