@@ -14,21 +14,22 @@ Still a Work In Progress
 
 block ::= '{' statement* '}' .
 
-statement ::= (expression | expression block) ';' .
+statement ::= (expression | operator '(' statement* ')' ) ';' .
 
-expression ::= operator* term | (terms? operator terms) | term .
+expression ::= list? operator+ list | term .
 
-group ::= '(' terms ')' .
+group ::= '(' list ')' .
 
-terms ::= term (',' term)* .
+list ::= term (',' term)* .
 
-term ::= identifier | declaration | call | literal | block | expression | group .
+//An expression is anything that can be simplified to a value or one action, and
+//a term is anything that can be used in an expression - so *a block of code can
+//be a term since it is a first-class citizen in this language*.
+term ::= declaration | identifier | call | literal | block | expression | group .
+
+declaration ::= identifier identifier (',' identifier)*
 
 call ::= identifier group .
-
-signature ::= '(' (declaration (',' declaration)*)? ')' .
-
-declaration ::= operator* identifier identifier signature? .
 
 identifier ::= letter alphanumeric+ ('.' letter alphanumeric+)* .
 
