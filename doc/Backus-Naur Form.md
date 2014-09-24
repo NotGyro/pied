@@ -27,19 +27,24 @@ term ::= identifier | declaration | call | literal | block | expression | group 
 call ::= identifier group .
 
 signature ::= '(' (declaration (',' declaration)*)? ')' .
+
 declaration ::= operator* identifier identifier signature? .
 
 identifier ::= letter alphanumeric+ ('.' letter alphanumeric+)* .
 
-literal ::= number | quote <anything> quote
+literal ::= number | quote <anything> quote .
 
-operator ::= <host-defined>
+operator ::= <host-defined> .
 (known to include '=', 'return', 'if', and others)
 
 alphanumeric ::= letter | digit .
 
-quote ::= " | '
+quote ::= " | ' .
+
 letter ::= 'A' | 'B' | 'C' ... 'Z' | 'a' | 'b' | 'c' ... 'z' | '_' .
+
 number ::= integer | integer '.' digit+ . 
+
 integer ::= '-'? digit+ .
+
 digit ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' .
