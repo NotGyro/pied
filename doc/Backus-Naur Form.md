@@ -14,7 +14,7 @@ Still a Work In Progress
 
 block ::= '{' statement* '}' .
 
-statement ::= (expression | operator '(' statement* ')' ) ';' .
+statement ::= (expression | operator ('(' statement* ')')? operator? ) ';' .
 
 expression ::= list? operator+ list | term .
 
